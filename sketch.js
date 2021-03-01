@@ -11,7 +11,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth-400,windowHeight-20);
+  createCanvas(windowWidth,windowHeight);
   
   game = new Game();
   welcome_screen = new WelcomeScreen();
@@ -26,7 +26,7 @@ function draw() {
     text("Welcome", width/2, 0);
     stroke(255)
     fill(255)
-    text("Press SPACE to start game", width/3+75, height-300);
+    text("Press SPACE to start game", width/2-100, height-200);
     if(keyDown("space")){
       gameState = PLAY;
       
@@ -35,6 +35,9 @@ function draw() {
   }else if(gameState === PLAY){
       game.play();
       game.spawnShells();
+      if (keyDown(LEFT_ARROW)) {
+          game.moveLeft();        
+      }
   }else {
 
   }

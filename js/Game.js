@@ -19,6 +19,8 @@ class Game{
         this.shellImg15=loadImage("Images/Shells/shell15.png")
         this.shellImg16=loadImage("Images/Shells/Shell16.png")
         this.shellImg17=loadImage("Images/Shells/shell17.png")
+
+        this.player=createSprite(50,height-150)
     
     }
 
@@ -29,7 +31,7 @@ class Game{
     spawnShells(){
 
        if(frameCount%40===0){
-        var shell = createSprite(random(windowWidth/2-500,windowWidth/2+100),random(windowHeight/2+50,windowHeight/2+200));
+        var shell = createSprite(random(200,windowWidth-50),random(windowHeight/2,windowHeight-150));
         var rand = Math.round(random(1,17));
         switch (rand) {
             case 1:shell.addImage("shell",this.shellImg1); 
@@ -76,4 +78,11 @@ class Game{
        }
         drawSprites();
     }
+
+    moveLeft(){
+        this.player.x=this.player.x-5
+    }
+    moveRight(){}
+    moveDown(){}
+    moveUp(){}
 }
