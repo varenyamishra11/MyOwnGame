@@ -19,9 +19,14 @@ class Game{
         this.shellImg15=loadImage("Images/Shells/shell15.png")
         this.shellImg16=loadImage("Images/Shells/Shell16.png")
         this.shellImg17=loadImage("Images/Shells/shell17.png")
+        this.coralImg1=loadImage("Images/Coral1.png")
+        this.coralImg2=loadImage("Images/Coral2.png")
+        this.weedImg=loadImage("Images/Sea weed.png")
+
 
         this.player=createSprite(50,height-150)
-    
+        this.playerImg=loadImage("Images/girl2CollectingShellsNoBg.png")
+        this.player.addImage("player",this.playerImg);
     }
 
     play(){
@@ -31,7 +36,7 @@ class Game{
     spawnShells(){
 
        if(frameCount%40===0){
-        var shell = createSprite(random(200,windowWidth-50),random(windowHeight/2,windowHeight-150));
+        var shell = createSprite(random(300,windowWidth-50),random(windowHeight-180,windowHeight-300));
         var rand = Math.round(random(1,17));
         switch (rand) {
             case 1:shell.addImage("shell",this.shellImg1); 
@@ -73,16 +78,39 @@ class Game{
             default:
                 break;
         }
-
         shell.scale=0.2;
        }
-        drawSprites();
-    }
 
+       if(frameCount%1000===0){
+        var coral1 = createSprite(random(300,windowWidth-50),random(windowHeight-180,windowHeight-300));
+        coral1.addImage("coral",this.coralImg1);
+        coral1.scale=0.3;      
+       }
+
+       if(frameCount%1000===0){
+        var coral2 = createSprite(random(300,windowWidth-50),random(windowHeight-180,windowHeight-300));
+        coral2.addImage("coral",this.coralImg2);
+        coral2.scale=0.2;      
+       }
+
+    if(frameCount%700===0){
+        var weed = createSprite(random(300,windowWidth-50),random(windowHeight-180,windowHeight-300));
+        weed.addImage("weed",this.weedImg); 
+        weed.scale=0.2;      
+       }
+        drawSprites(); 
+    }
     moveLeft(){
         this.player.x=this.player.x-5
     }
-    moveRight(){}
-    moveDown(){}
-    moveUp(){}
+    moveRight(){
+        this.player.x=this.player.x+5
+    }
+    moveDown(){
+        this.player.y=this.player.y+5
+    }
+    moveUp(){
+        this.player.y=this.player.y-5
+    }
+    
 }
