@@ -31,6 +31,7 @@ class Game{
         this.yellowPlasticImg=loadImage("Images/Waste/Yellow_Plastic_Bag.png");
         this.crushedCanImg=loadImage("Images/Waste/crushedCan.png");
         this.AluminiumCanImg=loadImage("Images/Waste/Aluminium_can.png");
+        this.glassBottleImg=loadImage("Images/Waste/glassBottle.png")
         
         this.player=createSprite(50,height-150)
         this.player.debug=true;
@@ -172,6 +173,14 @@ class Game{
         AluminiumCan.addImage("Aluminium can",this.AluminiumCanImg); 
         AluminiumCan.scale=0.1;  
         this.metalGroup.add(AluminiumCan);    
+       }
+       
+       if(frameCount%1067===0){
+        var glassBottle= createSprite(random(300,windowWidth-50),random(windowHeight-180,windowHeight-300));
+        glassBottle.debug=true;
+        glassBottle.addImage("Glass Bottle",this.glassBottleImg); 
+        glassBottle.scale=0.2;  
+        this.glassGroup.add(glassBottle);    
        }
        
         drawSprites(); 
