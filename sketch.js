@@ -3,8 +3,11 @@ var PLAY = 1;
 var END = 2;
 var gameState = WELCOME;
 
-var score;
+var score=0;
 var welcome_screen , game;
+var shellsGroup;
+var plasticDustbin , glassDustbin , PaperDustbin;
+var PlasticBtn;
 
 function preload(){
 
@@ -14,6 +17,12 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   game = new Game();
   welcome_screen = new WelcomeScreen();
+
+  PlasticBtn=createButton("dispose waste in Plastic dustbin")
+  PlasticBtn.position(593,118)
+  //PlasticBtn.mousePressed(game.plasticDisposed)
+  PlasticBtn.hide();
+  
 }
 
 function draw() {
@@ -30,12 +39,12 @@ function draw() {
       gameState = PLAY;
       
     }
-
-    
-
-  }else if(gameState === PLAY){
+  }
+  else if(gameState === PLAY){
       game.play();
       game.spawnShells();
+      game.calculateScore();
+      game.dropWaste();
       textSize(35);
       textFont("Cavolini");
       fill(244, 75, 177);
@@ -56,8 +65,5 @@ function draw() {
           game.moveUp();        
         }
 
-  }else {
-
   }
-  
 }
