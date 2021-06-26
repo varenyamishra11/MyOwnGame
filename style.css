@@ -5,3 +5,38 @@ html, body {
 canvas {
   display: block;
 }
+.PBtn{
+  height: 40px;
+  background-color: rgb(255, 247, 238);
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 15px;
+}
+
+.MBtn{
+  height: 40px;
+  background-color: rgb(170, 23, 214);
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 15px;
+}
+
+.GBtn{
+  height: 40px;
+  background-color: rgb(255, 166, 0);
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 15px;
+}
