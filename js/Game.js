@@ -1,7 +1,7 @@
 class Game{
     constructor(){
         this.gameBg=loadImage("Images/seaBg1.png");
-        this.introBg=loadImage("Images/Instructions_page(updated).png")
+        this.introBg=loadImage("Images/Instructions_page_updated.png")
         this.endBg=loadImage("Images/GameEndScreen.jpg")
 
         this.shellImg1=loadImage("Images/Shells/Shell1.png")
@@ -323,10 +323,10 @@ class Game{
                     this.plastic1Group[index].destroy();
                     this.Plastic1Btn.hide();
                     //var R = Math.round(random(0,2));
-                /*setTimeout(() => {
+                setTimeout(() => {
                     textSize(30);
                     text("Bravo!!Hats off to you",934,52)
-                }, 1000);*/
+                }, 1000);
                     score=score+5;
                 })
             }
@@ -344,10 +344,10 @@ class Game{
                     this.plastic2Group[index].destroy();
                     this.Plastic2Btn.hide();
                     //var Ra = Math.round(random(0,2));
-                /*setTimeout(() => {
+                setTimeout(() => {
                     textSize(30);
                     text("Good job :D. Did you know? 8 million pieces of plastic pollution find their way into our ocean daily.",934,52)
-                }, 10000);*/
+                }, 10000);
                     score=score+5;
                 })
             }
@@ -365,10 +365,10 @@ class Game{
                     this.metal1Group[index].destroy();
                     this.Metal1Btn.hide();
                     //var Ran = Math.round(random(0,2));
-                /*setTimeout(() => {
+                setTimeout(() => {
                     textSize(30);
                     text("Bravo👏👏. Did you know? 79% of plastic waste is sent to landfills or the ocean, while only 9% is recycled, and 12% gets incinerated. ",934,52)
-                }, 6000);*/
+                }, 6000);
                     score=score+5;
                 })
             }
@@ -387,9 +387,9 @@ class Game{
                     this.Metal2Btn.hide();
                     //var Rand = Math.round(random(0,2));
                 //setTimeout(() => {
-                    /*textSize(30);
+                    textSize(30);
                     text("Good job!!You are helping the Environment immensely",934,52)
-               // }, 2000);*/
+               // }, 2000);
                     score=score+5;
                 })
             }
@@ -407,10 +407,10 @@ class Game{
                     this.glassGroup[index].destroy();
                     this.GlassBtn.hide();
                     //var Rando = Math.round(random(0,2));
-               /* setTimeout(() => {
+                setTimeout(() => {
                     textSize(30);
                     text("Excellent👏👏you are inspiring others too",934,52)
-                }, 6000);*/
+                }, 6000);
                     score=score+5;
                 })
             }
